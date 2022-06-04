@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+	
+	.cat-container
+	{
+		width:100%;
+		display:flex;
+		justify-content:center;	
+		margin:20px 0;
+	}
+	table
+	{
+  		border: 1px solid;
+  		margin-left: auto;
+  		margin-right: auto;
+	}
+	th, td 
+	{
+  		border: 1px solid;
+  		padding: 15px 50px;
+  		text-align: center;
+	}
+	h2
+	{
+		text-align: center;
+		text-decoration: underline;
+	}
+	
+	input 
+	{
+    text-align: center;
+    padding: 1px 4px;
+	}
+	
+	select 
+	{
+    text-align: center;
+    padding: 2px 4px;
+	}
+	
+	.filter-btn 
+	{
+    padding: 2px 13px;
+	}
+	
+	.back-btn
+	{
+		position: absolute;
+    	left: 48%;
+    	padding:5px 20px;
+	}
+</style>
+</head>
+<body>
+	<h2>Purchase Report</h2>
+	
+	<div class="cat-container">
+		<form action="/index/purchasereport/dateandcategory">
+		
+		Date:<input type="date" name="date" value="2022-02-29">
+		 Category:<select name="category" required>
+		<option value="none" selected disabled hidden='hidden'>Select an Option</option>
+        <option value="RunningShoes">Running shoes</option>
+        <option value="SoccerShoes">Soccer shoes</option>
+        <option value="Sneakers">Sneakers</option>
+        <option value="HikingBoot">Hiking Boot</option>
+        <option value="BasketballShoes">Basketball shoes</option>
+   	 	</select>
+   	 	
+   	 	<button type="submit" class="filter-btn">filter</button>
+	
+		</form>
+		
+	</div>
+		
+	<p th:if="${error}">No record found</p>
+	
+	<table>
+		<tr>
+			<th>Purchase Number</th>
+			<th>customer Name</th>
+			<th>Product Name</th>			
+			<th>Purchased on</th>
+			
+		</tr>
+		
+		<tr th:each="data : ${report}">
+			<td><span th:text="${data.PurchaseReportNumber}"></span> </td>
+			<td><span th:text="${data.purchaseReportName}"></span> </td>
+			<td><span th:text="${data.purchaseReportProduct}"></span> </td>
+			<td><span th:text="${data.purchaseReportDate}"></span> </td>
+		
+		</tr>
+	</table>
+	<br><br><hr>
+	<a href="/index"><button class="back-btn">back</button></a>
+</body>
+</html>

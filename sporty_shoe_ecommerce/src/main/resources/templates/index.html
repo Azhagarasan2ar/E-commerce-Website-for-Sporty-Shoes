@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+
+	.nav-bar
+	{
+		width:100%;
+		display:flex;
+		justify-content:space-between;
+		
+	}
+	table
+	{
+  		border: 1px solid;
+  		margin-left: auto;
+  		margin-right: auto;
+	}
+	th, td 
+	{
+  		border: 1px solid;
+  		padding: 15px 50px;
+  		text-align: center;
+	}
+	h1,h2
+	{
+		text-align: center;
+		text-decoration: underline;
+	}
+	.shop-name
+	{
+		text-decoration: none;
+		display:inline;
+	}
+	ul 
+	{
+  		list-style-type: none;
+  		margin-top:60px;
+  		margin-bottom:0;
+	}
+	
+	li 
+	{
+  		display: inline;
+	}
+	a 
+	{
+  		
+ 		padding: 8px;
+  	}
+</style>
+</head>
+<body>
+	
+	
+	<div class="nav-bar">
+		<h1 class="shop-name">Sporty Shoes</h1>
+		<ul>
+  		<li><a href="/index/addProduct">Add Product</a></li>
+  		<li><a href="/index/deleteProduct">Delete Product</a></li>
+  		<li><a href="/index/usersList">Users List</a></li>
+  		<li><a href="/index/purchasereport">Purchase Report</a></li>
+  		<li><a href="/index/changePassword">Change Password</a></li>
+  		<li><a href="logout">Logout</a></li>
+
+	</ul>
+		
+	</div>
+		
+	<hr>
+	
+	<h1>Product Details</h1>
+	<h2>Running Shoes</h2>
+	<table>
+		<tr>
+			<th>Product </th>
+			<th>Price</th>
+		</tr>
+		
+		<tr th:each="data : ${RunningShoes}">
+			<td><span th:text="${data.productName}"></span> </td>
+			<td><span th:text="${data.productPrice}"></span> </td>
+		</tr>
+	</table>
+	<h2>Soccer Shoes</h2>
+	<table>
+		<tr>
+			<th>Product </th>
+			<th>Price</th>
+		</tr>
+		
+		<tr th:each="data : ${SoccerShoes}">
+			<td><span th:text="${data.productName}"></span> </td>
+			<td><span th:text="${data.productPrice}"></span> </td>
+		</tr>
+	</table>
+
+	<h2>Hiking Boot</h2>
+	<table>
+		<tr>
+			<th>Product </th>
+			<th>Price</th>
+		</tr>
+		
+		<tr th:each="data : ${HikingBoot}">
+			<td><span th:text="${data.productName}"></span> </td>
+			<td><span th:text="${data.productPrice}"></span> </td>
+		</tr>
+	</table>
+	
+	<h2>Sneakers</h2>
+	<table>
+		<tr>
+			<th>Product </th>
+			<th>Price</th>
+		</tr>
+		
+		<tr th:each="data : ${Sneakers}">
+			<td><span th:text="${data.productName}"></span> </td>
+			<td><span th:text="${data.productPrice}"></span> </td>
+		</tr>
+	</table>
+	
+	<h2>Basketball Shoes</h2>
+	<table>
+		<tr>
+			<th>Product </th>
+			<th>Price</th>
+		</tr>
+		
+		<tr th:each="data : ${BasketballShoes}">
+			<td><span th:text="${data.productName}"></span> </td>
+			<td><span th:text="${data.productPrice}"></span> </td>
+		</tr>
+	</table>
+		
+		
+
+	
+</body>
+</html>

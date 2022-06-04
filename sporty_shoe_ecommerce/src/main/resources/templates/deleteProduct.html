@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+	.del-container
+	{
+		width:100%;
+		display:flex;
+		justify-content:center;	
+		margin:20px 0;
+	}
+	table
+	{
+  		border: 1px solid;
+  		margin-left: auto;
+  		margin-right: auto;
+	}
+	th, td 
+	{
+  		border: 1px solid;
+  		padding: 15px 50px;
+  		text-align: center;
+	}
+	h2
+	{
+		text-align: center;
+		text-decoration: underline;
+	}
+	input
+	{
+		text-align:end;
+		padding:2px 6px;
+	}
+	.back-btn
+	{
+		position: absolute;
+    	left: 48%;
+    	padding:5px 20px;
+	}
+</style>
+</head>
+<body>
+	
+	<h2>Delete Product</h2>
+	
+	<div class="del-container">
+		<form action="/index/deleteProduct" method="post">
+		Enter Product Id:<input type="number" name="product_id">
+		<button type="submit" class="del-btn">delete</button>
+		</form>
+	</div>
+	
+	
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Product Name</th>
+			<th>Product Category</th>			
+			<th>Price</th>
+		</tr>
+		
+		<tr th:each="data : ${products}">
+			<td><span th:text="${data.productId}"></span> </td>
+			<td><span th:text="${data.productName}"></span> </td>
+			<td><span th:text="${data.productCategory}"></span> </td>
+			<td><span th:text="${data.productPrice}"></span> </td>
+		</tr>
+	</table>
+	<br><br><hr>
+	<a href="/index"><button class="back-btn">back</button></a>
+</body>
+</html>

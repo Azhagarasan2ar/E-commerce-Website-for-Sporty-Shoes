@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	*
+	{
+		margin:0;
+		padding:0;
+		box-sizing:border-box;
+	}
+	
+	body
+	{
+		height:100vh;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+	}
+	
+	.container
+	{
+		width:250px;
+		height:230px;
+		display:flex;
+		flex-direction:column;
+		justify-content:space-between;
+		padding:20px 35px;
+		border: thin solid #000;
+	}
+	
+	.error-message
+	{
+		color:red;
+		font-size:12px;
+		padding:5px 0;
+	}
+	
+	.container form
+	{
+		margin-top:5px;
+	}
+	
+	input
+	{
+		margin:5px;
+		padding:3px;
+	}
+	button
+	{
+		padding:5px 10px;
+		margin:10px;
+		transform:translateX(80%);
+		color:blue;
+	}
+	
+</style>
+</head>
+<body>
+	
+	<div class="container">
+		<h3>Admin Login Form</h3>
+		<form action=/login method="post">
+		<p th:if="${error}" class="error-message">UserName and Password Incorrect</p>
+		Enter your name:<input type="text" name="name"><br>
+		Enter your password:<input type="text" name="password"><br>
+		<button type="submit">submit</button>
+		</form>
+	</div>
+</body>
+</html>
