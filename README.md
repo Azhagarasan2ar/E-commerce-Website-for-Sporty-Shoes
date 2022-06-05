@@ -1,7 +1,7 @@
 # E-commerce-Website-for-Sporty-Shoes
 
 
-###Project objective:
+### Project objective:
 As a Full Stack Developer, complete the features of the application by planning the development. Sporty Shoes is a company that manufactures and sells sports shoes. They have a walk-in store, and now, they wish to launch their e-commerce portal. There will be an admin to manage the website. An administrator login will be required to access the admin page. he admin should be able to change his password if he wants, he should be able to Manage the products in the store including categorizing them, Browse the list of users who have signed up and be able to search users and See purchase reports filtered by date and category.
 
 
